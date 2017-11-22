@@ -9,6 +9,7 @@
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
 #define CURS 3 // movement layer
+#define NUMS 4 // numbers layer
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
@@ -28,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                           |      |      |           |      |        |
  *                                 ,---------|------|------|           |------+--------+------.
  *                                 |         |      |      |           |      |        |      |
- *                                 | Space / | NUM  |------|           |------|  Tab   |Enter |
+ *                                 | Space / | NUMS |------|           |------|  Tab   |Enter |
  *                                 |  CURS   |      |      |           |      |        |      |
  *                                 `-----------------------'           `----------------------'
  */
@@ -36,15 +37,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_* 
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
-        KC_ESC,          KC_1,         KC_2,               KC_3,                 KC_4,                KC_5,              KC_TRNS,
-        KC_DELT,         KC_Q,         KC_W,               MT(MOD_LGUI, KC_E),   KC_R,                KC_T,              KC_TRNS,
+        KC_ESC,          KC_1,         KC_2,               KC_3,                 KC_4,                KC_5,               KC_TRNS,
+        KC_DELT,         KC_Q,         KC_W,               MT(MOD_LGUI, KC_E),   KC_R,                KC_T,               KC_TRNS,
         KC_BSPC,         KC_A,         MT(MOD_LALT,KC_S),  MT(MOD_LCTL, KC_D),   MT(MOD_LSFT, KC_F),  KC_G,
-        KC_TRNS,         KC_Z,         KC_X,               KC_C,                 KC_V,                KC_B,              KC_TRNS,
+        KC_TRNS,         KC_Z,         KC_X,               KC_C,                 KC_V,                KC_B,               KC_TRNS,
         KC_GRV,          KC_QUOT,      KC_TRNS,            KC_TRNS,              KC_TRNS,
 
-                                                                                                      KC_TRNS,           KC_TRNS,
-                                                                                                                         KC_TRNS,
-                                                                                 LT(CURS, KC_SPC),    KC_TRNS,           KC_TRNS,
+                                                                                                      KC_TRNS,            KC_TRNS,
+                                                                                                                          KC_TRNS,
+                                                                                 LT(CURS, KC_SPC),    LT(NUMS, KC_NO),    KC_TRNS,
 
 
         // right hand
@@ -180,8 +181,49 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  
        KC_NO,   KC_NO,  
        KC_NO,  
-       KC_NO,   KC_NO,   KC_TRNS
+       KC_NO,   KC_NO,   KC_NO
 ),
+/* Keymap 4: Numbers
+ *
+ * ,--------------------------------------------------.           ,---------------------------------------------------.
+ * |        |      |      |      |      |      |      |           |      |      |      |      |       |      |        |
+ * |--------+------+------+------+------+-------------|           |------+------+------+------+-------+------+--------|
+ * |        |      |      | Gui  |      |      |      |           |      |      |  1   |  2   |  3    |      |        |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+-------+------+--------|
+ * |        |      | Alt  | Ctrl | Shft |      |------|           |------|      |  4   |  5   |  6    |      |        |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+-------+------+--------|
+ * |        |      |      |      |      |      |      |           |      |      |  7   |  8   |  9    |      |        |
+ * `--------+------+------+------+------+-------------'           `-------------+------+------+-------+------+--------'
+ *   |      |      |      |      |      |                                       |   0  |      |       |      |      |
+ *   `----------------------------------'                                       `-----------------------------------'
+ *                                        ,-------------.       ,-------------.
+ *                                        |      |      |       |      |      |
+ *                                 ,------|------|------|       |------+------+------.
+ *                                 |      |      |      |       |      |      |      |
+ *                                 |      |      |------|       |------|      |      |
+ *                                 |      |      |      |       |      |      |      |
+ *                                 `--------------------'       `--------------------'
+ */
+// MEDIA AND MOUSE
+[NUMS] = LAYOUT_ergodox(
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,     KC_NO,   KC_NO,  
+       KC_NO,   KC_NO,   KC_NO,   KC_RGUI,  KC_NO,     KC_NO,   KC_NO,  
+       KC_NO,   KC_NO,   KC_RALT, KC_RCTRL, KC_RSHIFT, KC_NO,  
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,     KC_NO,   KC_NO,  
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,  
+                                            KC_NO,     KC_NO,  
+                                                       KC_NO,  
+                                   KC_NO,   KC_TRNS,   KC_NO,  
+    // right hand
+       KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  
+       KC_NO,    KC_NO,   KC_1,    KC_2,    KC_3,    KC_NO,   KC_NO,  
+                 KC_NO,   KC_4,    KC_5,    KC_6,    KC_NO,   KC_MPLY,
+       KC_NO,    KC_NO,   KC_7,    KC_8,    KC_9,    KC_NO,   KC_NO,  
+                          KC_0,    KC_NO,   KC_NO,   KC_NO,   KC_NO,  
+       KC_NO,   KC_NO,  
+       KC_NO,  
+       KC_NO,   KC_NO,   KC_NO
+)
 };
 
 const uint16_t PROGMEM fn_actions[] = {
