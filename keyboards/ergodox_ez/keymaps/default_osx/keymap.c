@@ -6,11 +6,9 @@
 #include "action_layer.h"
 
 #define BASE 0 // default layer
-#define SYMB 1 // symbols
-#define MDIA 2 // media keys
-#define CURS 3 // movement layer
-#define NUMS 4 // numbers layer
-#define PRG  5 // a layer for programming
+#define CURS 1 // movement layer
+#define NUMS 2 // numbers layer
+#define PRG  3 // a layer for programming
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
@@ -60,19 +58,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,
         KC_TRNS,         KC_TAB,        KC_ENT
 ),
-/* Keymap 1: Symbol Layer
+/* Keymap 1: Cursor and movements
  *
- * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |        |  F1  |  F2  |  F3  |  F4  |  F5  |      |           |      |  F6  |  F7  |  F8  |  F9  |  F10 |   F11  |
- * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        |   !  |   @  |   {  |   }  |   |  |      |           |      |   Up |   7  |   8  |   9  |   *  |   F12  |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |   #  |   $  |   (  |   )  |   `  |------|           |------| Down |   4  |   5  |   6  |   +  |        |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |   %  |   ^  |   [  |   ]  |   ~  |      |           |      |   &  |   1  |   2  |   3  |   \  |        |
- * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      |      |      |                                       |      |    . |   0  |   =  |      |
- *   `----------------------------------'                                       `----------------------------------'
+ * ,--------------------------------------------------.           ,----------------------------------------------------.
+ * |        |      |      |      |      |      |      |           |      |      |      |      |        |      |        |
+ * |--------+------+------+------+------+-------------|           |------+------+------+------+--------+------+--------|
+ * |        |      |      | Gui  |      |      |      |           |      |      | PgUp |  Up  | PgDown |      |        |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+--------+------+--------|
+ * |        |      |  Alt | Ctrl | Shft |      |------|           |------|      | Left | Down | Right  |      |        |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+--------+------+--------|
+ * |        |      |      |      |      |      |      |           |      |      | Home |      |  End   |      |        |
+ * `--------+------+------+------+------+-------------'           `-------------+------+------+--------+------+--------'
+ *   |      |      |      |      |      |                                       |      |      |        |      |      |
+ *   `----------------------------------'                                       `------------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |      |      |       |      |      |
  *                                 ,------|------|------|       |------+------+------.
@@ -81,122 +79,39 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 |      |      |      |       |      |      |      |
  *                                 `--------------------'       `--------------------'
  */
-// SYMBOLS
-[SYMB] = LAYOUT_ergodox(
-       // left hand
-       KC_TRNS,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_TRNS,
-       KC_TRNS,KC_EXLM,KC_AT,  KC_LCBR,KC_RCBR,KC_PIPE,KC_TRNS,
-       KC_TRNS,KC_HASH,KC_DLR, KC_LPRN,KC_RPRN,KC_GRV,
-       KC_TRNS,KC_PERC,KC_CIRC,KC_LBRC,KC_RBRC,KC_TILD,KC_TRNS,
-       KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
-                                       KC_TRNS,KC_TRNS,
-                                               KC_TRNS,
-                               KC_TRNS,KC_TRNS,KC_TRNS,
-       // right hand
-       KC_TRNS, KC_F6,   KC_F7,  KC_F8,   KC_F9,   KC_F10,  KC_F11,
-       KC_TRNS, KC_UP,   KC_7,   KC_8,    KC_9,    KC_ASTR, KC_F12,
-                KC_DOWN, KC_4,   KC_5,    KC_6,    KC_PLUS, KC_TRNS,
-       KC_TRNS, KC_AMPR, KC_1,   KC_2,    KC_3,    KC_BSLS, KC_TRNS,
-                         KC_TRNS,KC_DOT,  KC_0,    KC_EQL,  KC_TRNS,
-       KC_TRNS, KC_TRNS,
-       KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_TRNS
-),
-/* Keymap 2: Media and mouse keys
- *
- * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
- * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        |      |      | MsUp |      |      |      |           |      |      |      |      |      |      |        |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |      |MsLeft|MsDown|MsRght|      |------|           |------|      |      |      |      |      |  Play  |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |           |      |      |      | Prev | Next |      |        |
- * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      | Lclk | Rclk |                                       |VolUp |VolDn | Mute |      |      |
- *   `----------------------------------'                                       `----------------------------------'
- *                                        ,-------------.       ,-------------.
- *                                        |      |      |       |      |      |
- *                                 ,------|------|------|       |------+------+------.
- *                                 |      |      |      |       |      |      |Brwser|
- *                                 |      |      |------|       |------|      |Back  |
- *                                 |      |      |      |       |      |      |      |
- *                                 `--------------------'       `--------------------'
- */
-// MEDIA AND MOUSE
-[MDIA] = LAYOUT_ergodox(
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-       KC_NO,   KC_NO,   KC_NO,   KC_MS_U, KC_NO,   KC_NO,   KC_NO,
-       KC_NO,   KC_NO,   KC_MS_L, KC_MS_D, KC_MS_R, KC_NO,
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-       KC_NO,   KC_NO,   KC_NO,   KC_BTN1, KC_BTN2,
-                                           KC_NO,   KC_NO,
-                                                    KC_NO,
-                                  KC_NO,   KC_NO,   KC_NO,
-    // right hand
-       KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-       KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-                 KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_MPLY,
-       KC_NO,    KC_NO,   KC_NO,   KC_MPRV, KC_MNXT, KC_NO,   KC_NO,
-                          KC_VOLU, KC_VOLD, KC_MUTE, KC_NO,   KC_NO,
-       KC_NO,   KC_NO,  
-       KC_NO,  
-       KC_NO,   KC_NO,   KC_WBAK
-),
-/* Keymap 3: Cursor and movements
- *
- * ,--------------------------------------------------.           ,---------------------------------------------------.
- * |        |      |      |      |      |      |      |           |      |      |      |      |       |      |        |
- * |--------+------+------+------+------+-------------|           |------+------+------+------+-------+------+--------|
- * |        |      |      | Gui  |      |      |      |           |      |      |      |  Up  |       |      |        |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+-------+------+--------|
- * |        |      |  Alt | Ctrl | Shft |      |------|           |------|      | Left | Down | Right |      |        |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+-------+------+--------|
- * |        |      |      |      |      |      |      |           |      |      |      |      |       |      |        |
- * `--------+------+------+------+------+-------------'           `-------------+------+------+-------+------+--------'
- *   |      |      |      |      |      |                                       |      |      |       |      |      |
- *   `----------------------------------'                                       `-----------------------------------'
- *                                        ,-------------.       ,-------------.
- *                                        |      |      |       |      |      |
- *                                 ,------|------|------|       |------+------+------.
- *                                 |      |      |      |       |      |      |      |
- *                                 |      |      |------|       |------|      |      |
- *                                 |      |      |      |       |      |      |      |
- *                                 `--------------------'       `--------------------'
- */
-// MEDIA AND MOUSE
+// CURS
 [CURS] = LAYOUT_ergodox(
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,     KC_NO,   KC_NO,  
-       KC_NO,   KC_NO,   KC_NO,   KC_RGUI,  KC_NO,     KC_NO,   KC_NO,  
-       KC_NO,   KC_NO,   KC_RALT, KC_RCTRL, KC_RSHIFT, KC_NO,  
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,     KC_NO,   KC_NO,  
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,  
-                                            KC_NO,     KC_NO,  
-                                                       KC_NO,  
-                                   KC_NO,   KC_NO,     KC_NO,  
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,     KC_NO,   KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_RGUI,  KC_NO,     KC_NO,   KC_NO,
+       KC_NO,   KC_NO,   KC_RALT, KC_RCTRL, KC_RSHIFT, KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,     KC_NO,   KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,
+                                            KC_NO,     KC_NO,
+                                                       KC_NO,
+                                   KC_NO,   KC_NO,     KC_NO,
     // right hand
-       KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  
-       KC_NO,    KC_NO,   KC_PGUP, KC_UP  , KC_PGDN, KC_NO,   KC_NO,  
-                 KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,   KC_MPLY,
-       KC_NO,    KC_NO,   KC_NO,   KC_MPRV, KC_MNXT, KC_NO,   KC_NO,  
-                          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  
-       KC_NO,   KC_NO,  
-       KC_NO,  
+       KC_NO,    KC_NO,   KC_NO,    KC_NO,    KC_NO,    KC_NO,   KC_NO,
+       KC_NO,    KC_NO,   KC_PGUP,  KC_UP,    KC_PGDN,  KC_NO,   KC_NO,
+                 KC_NO,   KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_NO,   KC_MPLY,
+       KC_NO,    KC_NO,   KC_HOME,  KC_NO,    KC_END,   KC_NO,   KC_NO,
+                          KC_NO,    KC_NO,    KC_NO,    KC_NO,   KC_NO,
+       KC_NO,   KC_NO,
+       KC_NO,
        KC_NO,   KC_NO,   KC_NO
 ),
-/* Keymap 4: Numbers
+/* Keymap 2: Numbers
  *
  * ,--------------------------------------------------.           ,---------------------------------------------------.
- * |        |      |      |      |      |      |      |           |      |      |      |      |       |      |        |
- * |--------+------+------+------+------+-------------|           |------+------+------+------+-------+------+--------|
- * |        |      |      | Gui  |      |      |      |           |      |      |  7   |  8   |  9    |      |        |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+-------+------+--------|
- * |        |      | Alt  | Ctrl | Shft |      |------|           |------|      |  4   |  5   |  6    |      |        |
- * |--------+------+------+------+------+------|      |           |      |------+------+------+-------+------+--------|
- * |        |      |      |      |      |      |      |           |      |      |  1   |  2   |  3    |      |        |
- * `--------+------+------+------+------+-------------'           `-------------+------+------+-------+------+--------'
- *   |      |      |      |      |      |                                       |   0  |      |       |      |      |
- *   `----------------------------------'                                       `-----------------------------------'
+ * |        |      |      |      |      |      |      |           |      |      |  7   |  8   |  9   |      |        |
+ * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
+ * |        |      |      | Gui  |      |      |      |           |      |      |  4   |  5   |  6   |      |        |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * |        |      | Alt  | Ctrl | Shft |      |------|           |------|      |  1   |  2   |  3   |      |        |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |           |      |      |  0   |      |      |      |        |
+ * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
+ *   |      |      |      |      |      |                                       |      |      |      |      |      |
+ *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |      |      |       |      |      |
  *                                 ,------|------|------|       |------+------+------.
@@ -205,24 +120,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 |      |      |      |       |      |      |      |
  *                                 `--------------------'       `--------------------'
  */
-// MEDIA AND MOUSE
 [NUMS] = LAYOUT_ergodox(
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,     KC_NO,   KC_NO,  
-       KC_NO,   KC_NO,   KC_NO,   KC_RGUI,  KC_NO,     KC_NO,   KC_NO,  
-       KC_NO,   KC_NO,   KC_RALT, KC_RCTRL, KC_RSHIFT, KC_NO,  
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,     KC_NO,   KC_NO,  
-       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,  
-                                            KC_NO,     KC_NO,  
-                                                       KC_NO,  
-                                   KC_NO,   KC_TRNS,   KC_NO,  
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,     KC_NO,   KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_RGUI,  KC_NO,     KC_NO,   KC_NO,
+       KC_NO,   KC_NO,   KC_RALT, KC_RCTRL, KC_RSHIFT, KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,     KC_NO,   KC_NO,
+       KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,
+                                            KC_NO,     KC_NO,
+                                                       KC_NO,
+                                   KC_NO,   KC_TRNS,   KC_NO,
     // right hand
-       KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  
-       KC_NO,    KC_NO,   KC_7,    KC_8,    KC_9,    KC_NO,   KC_NO,  
-                 KC_NO,   KC_4,    KC_5,    KC_6,    KC_NO,   KC_MPLY,
-       KC_NO,    KC_NO,   KC_1,    KC_2,    KC_3,    KC_NO,   KC_NO,  
-                          KC_0,    KC_NO,   KC_NO,   KC_NO,   KC_NO,  
-       KC_NO,   KC_NO,  
-       KC_NO,  
+       KC_NO,    KC_NO,   KC_7,    KC_8,    KC_9,    KC_NO,   KC_NO,
+       KC_NO,    KC_NO,   KC_4,    KC_5,    KC_6,    KC_NO,   KC_NO,
+                 KC_NO,   KC_1,    KC_2,    KC_3,    KC_NO,   KC_MPLY,
+       KC_NO,    KC_NO,   KC_0,    KC_NO,   KC_NO,   KC_NO,   KC_NO,
+                          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+       KC_NO,   KC_NO,
+       KC_NO,
        KC_NO,   KC_NO,   KC_NO
 ),
 /* Keymap 5: Programming symbols layer
@@ -236,7 +150,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |        |   %  |   ^  |   [  |   ]  |   ~  |      |           |      |   &  |      |      |      |   \  |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      |      |      |                                       |      |     |      |   =  |      |
+ *   |      |      |      |      |      |                                       |      |      |      |   =  |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        |      |      |       |      |      |
