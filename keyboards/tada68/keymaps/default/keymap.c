@@ -23,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------------------------------------------------------------------|
    * |        |  Z|  X|   C|  V|  B|  N|  M|  , |  .|  /|      | Up|    |
    * |------------------------------------------------------------------|
-   * |_FL |Win |    |         Space/_FL      |App | FN|    |Lef|Dow|Rig |
+   * |    |Win |    |         Space/_FL      |App | FN|    |Lef|Dow|Rig |
    * `------------------------------------------------------------------'
    */
 [_BL] = KEYMAP_ANSI(
@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB  ,         KC_Q , KC_W,                MT(MOD_LGUI,KC_E),    KC_R,                KC_T,   KC_Y,   KC_U,               MT(MOD_RGUI,KC_I),    KC_O,               KC_P        ,    KC_LBRC, KC_RBRC,    KC_BSLS,  KC_NO , \
   KC_CAPS , LT(_ML,KC_A), MT(MOD_LALT,KC_S),   MT(MOD_LCTL, KC_D),   MT(MOD_LSFT, KC_F),  KC_G,   KC_H,   MT(MOD_RSFT, KC_J), MT(MOD_RCTL,KC_K),    MT(MOD_LALT,KC_L),  LT(_ML,KC_SCLN), KC_QUOT,             KC_ENT ,  KC_NO, \
   KC_NO   , KC_Z,         KC_X,                KC_C,                 KC_V,                KC_B,   KC_N,   KC_M,               KC_COMM,              KC_DOT,             KC_SLSH,         KC_NO  ,             KC_UP  ,  KC_NO, \
-  TO(_FL), KC_LGUI,      KC_NO  ,                        LT(_FL,KC_SPC),                                                      KC_APP,               MO(_FL),            KC_NO   ,        KC_LEFT,             KC_DOWN,  KC_RGHT),
+  KC_NO,   KC_LGUI,      KC_NO  ,                        LT(_FL,KC_SPC),                                                      KC_APP,               MO(_FL),            KC_NO   ,        KC_LEFT,             KC_DOWN,  KC_RGHT),
 
   /* Keymap _ML: Movement Layer
    * ,-------------------------------------0------------------------------.
