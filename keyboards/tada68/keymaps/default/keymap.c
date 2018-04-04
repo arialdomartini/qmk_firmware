@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, _______, _______, BL_DEC , BL_TOGG, BL_INC , _______, KC_BSPC, _______, KC_DEL  , _______, KC_BTN1, KC_MS_U, KC_BTN2, \
   _______, _______, _______,                 KC_ENT,                      _______, _______ , _______, KC_MS_L, KC_MS_D, KC_MS_R),
 
-  /* Layer _FL: Funcion Layer
+  /* Layer _FL: Function Layer
    * ,------------------------------------------------------------------.
    * |   | F1|F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9  |F10|F11|F12|        |    |
    * |------------------------------------------------------------------|
