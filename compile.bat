@@ -1,0 +1,1 @@
+docker run --rm -v /c/Users/canale/source/repos/qmk_firmware:/qmk ale7canna/qmk

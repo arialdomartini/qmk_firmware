@@ -1,5 +1,4 @@
 FROM debian:jessie
-MAINTAINER Erik Dasque <erik@frenchguys.com>
 
 RUN apt-get update && apt-get install --no-install-recommends -y build-essential \
     gcc \
@@ -19,10 +18,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y build-essential
     avrdude \
     && rm -rf /var/lib/apt/lists/*
 
-ENV keyboard=ergodox
-ENV subproject=ez
-ENV keymap=default
-
 VOLUME /qmk
 WORKDIR /qmk
-CMD make clean ; make keyboard=${keyboard} subproject=${subproject} keymap=${keymap}
+CMD make clean ; make whitefox:default
