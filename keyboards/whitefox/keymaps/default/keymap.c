@@ -11,6 +11,8 @@
 #define MY_J MT(MOD_LSFT, KC_J)
 #define MY_D MT(MOD_LCTL, KC_D)
 #define MY_K MT(MOD_LCTL, KC_K)
+#define MY_S MT(MOD_LALT, KC_S)
+#define MY_L MT(MOD_LALT, KC_L)
 
 const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Layer 0: Default Layer
@@ -19,7 +21,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------------------------------------------------------------------------------------------|
      * |Tab  |    Q|    W|    E|    R|    T|    Y|    U|    I|    O|    P|    [|    ]|Backs|   Del|
      * |------------------------------------------------------------------------------------------|
-     * |CapsLo|    A|    S|D/CTL|F/SFT|    G|    H|J/SFT|D/CTL|    L|    ;|    '|  Enter   |   PgU|
+     * |CapsLo|A/CRS|S/ALT|D/CTL|F/SFT|    G|    H|J/SFT|D/CTL|L/ALT|    ;|    '|  Enter   |   PgU|
      * |------------------------------------------------------------------------------------------|
      * |Shif|     |    Z|    X|    C|    V|    B|    N|    M|    ,|    .|    /| Shift | Up |   PgD|
      * |------------------------------------------------------------------------------------------|
