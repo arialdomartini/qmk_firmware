@@ -21,17 +21,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |       |  A|  S|   D|  F|  G|  H|  J|   K|  L|  ;|  '|Enter  |CAPS|
    * |       |_ML|ALT|CTL |SFT|   |   |SFT|CTL |ALT|   |   |       |    |
    * |------------------------------------------------------------------|
-   * |        |  Z|  X|   C|  V|  B|  N|  M|  , |  .|  /|      | Up|    |
+   * | Backspc|  Z|  X|   C|  V|  B|  N|  M|  , |  .|  /| Del  | Up|    |
    * |------------------------------------------------------------------|
-   * |    |Win |    |         Space/_FL      |App |   |    |Lef|Dow|Rig |
+   * |    |    |    |         Space/_FL      |App |   |    |Lef|Dow|Rig |
    * `------------------------------------------------------------------'
    */
 [_BL] = KEYMAP_ANSI(
   KC_ESC,   KC_1,         KC_2,                KC_3,                 KC_4,                KC_5,   KC_6,   KC_7,               KC_8,                 KC_9,               KC_0,            KC_MINS, KC_EQL,     KC_BSLS,  KC_GRV, \
-  KC_TAB,   KC_Q,         KC_W,                MT(MOD_LGUI,KC_E),    KC_R,                KC_T,   KC_Y,   KC_U,               MT(MOD_RGUI,KC_I),    KC_O,               KC_P,            KC_LBRC, KC_RBRC,    KC_BSPC,  KC_INS , \
+  KC_TAB,   KC_Q,         KC_W,                MT(MOD_LGUI,KC_E),    KC_R,                KC_T,   KC_Y,   KC_U,               MT(MOD_RGUI,KC_I),    KC_O,               KC_P,            KC_LBRC, KC_RBRC,    KC_NO,    KC_INS , \
   KC_NO,    LT(_ML,KC_A), MT(MOD_LALT,KC_S),   MT(MOD_LCTL, KC_D),   MT(MOD_LSFT, KC_F),  KC_G,   KC_H,   MT(MOD_RSFT, KC_J), MT(MOD_RCTL,KC_K),    MT(MOD_LALT,KC_L),  KC_SCLN,         KC_QUOT,             KC_ENT ,  KC_CAPS, \
-  KC_NO,    KC_Z,         KC_X,                KC_C,                 KC_V,                KC_B,   KC_N,   KC_M,               KC_COMM,              KC_DOT,             KC_SLSH,         KC_NO,               KC_UP  ,  KC_NO, \
-  KC_NO,    KC_LGUI,      KC_NO,                         LT(_FL,KC_SPC),                                                      KC_APP,               KC_NO,              KC_NO,           KC_LEFT,             KC_DOWN,  KC_RGHT),
+  KC_BSPC,  KC_Z,         KC_X,                KC_C,                 KC_V,                KC_B,   KC_N,   KC_M,               KC_COMM,              KC_DOT,             KC_SLSH,         KC_DEL,              KC_UP  ,  KC_NO, \
+  KC_NO,    KC_NO,        KC_NO,                         LT(_FL,KC_SPC),                                                      KC_APP,               KC_NO,              KC_NO,           KC_LEFT,             KC_DOWN,  KC_RGHT),
 
   /* Layer _ML: Movement Layer
    * ,--------------------------------------------------------------------.
@@ -41,17 +41,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |--------------------------------------------------------------------|
    * |      |   |   |   |   |   |HOME|<-  |Dn   | ->|END |   |       |    |
    * |--------------------------------------------------------------------|
-   * |        |   |   |Bl-|BL |BL+|   |Bspc|     |Del|   |  McL |MsU |McR |
+   * |        |   |   |Bl-|BL |BL+|   |    |     |   |   |  McL |MsU |McR |
    * |--------------------------------------------------------------------|
    * |    |    |    |       Return           |     |   |    |MsL|MsD |MsR |
    * `--------------------------------------------------------------------'
    */
 [_ML] = KEYMAP_ANSI(
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______ ,\
-  _______, _______, _______, _______, _______, _______, _______, KC_PGUP, KC_UP  , KC_PGDN , _______, _______, _______, _______, _______, \
+  _______, _______, _______, _______, _______, _______, _______, KC_PGUP, KC_UP  , KC_PGDN,  _______, _______, _______, _______, _______, \
   _______, _______, _______, _______, _______, _______, KC_HOME, KC_LEFT, KC_DOWN, KC_RIGHT, KC_END , _______, _______, _______, \
-  _______, _______, _______, BL_DEC , BL_TOGG, BL_INC , _______, KC_BSPC, _______, KC_DEL  , _______, KC_BTN1, KC_MS_U, KC_BTN2, \
-  _______, _______, _______,                 KC_ENT,                      _______, _______ , _______, KC_MS_L, KC_MS_D, KC_MS_R),
+  _______, _______, _______, BL_DEC , BL_TOGG, BL_INC , _______, _______, _______, _______,  _______, KC_BTN1, KC_MS_U, KC_BTN2, \
+  _______, _______, _______,                 KC_ENT,                      _______, _______,  _______, KC_MS_L, KC_MS_D, KC_MS_R),
 
   /* Layer _FL: Function Layer
    * ,------------------------------------------------------------------.
