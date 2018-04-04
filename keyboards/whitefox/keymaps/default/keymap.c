@@ -6,6 +6,7 @@
 
 #define _______ KC_TRNS
 
+// special keys
 #define MY_A LT(CURS, KC_A)
 #define MY_F MT(MOD_LSFT, KC_F)
 #define MY_J MT(MOD_LSFT, KC_J)
@@ -17,10 +18,28 @@
 #define MY_FN LT(EXTR, KC_APP)
 #define MY_ESC LT(EXTR, KC_ESC)
 
+// macros
+#define trigger_time 110
+#define T1     M(101)
+#define T2     M(102)
+#define T3     M(103)
+#define T4     M(104)
+#define T5     M(105)
+#define T6     M(106)
+#define T7     M(107)
+#define T8     M(108)
+#define T9     M(109)
+#define T10    M(110)
+#define T11    M(111)
+#define T12    M(112)
+
+#define T_ENT  M(121)
+#define T_ESC M(122)
+
 const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Layer 0: Base Layer
      * ,------------------------------------------------------------------------------------------.
-     * |MyEs|   1|    2|    3|    4|    5|    6|    7|    8|    9|    0|    -|    =|    \|   `|Ins|
+     * |MyEs| 1/F | 2/F | 3/F| 4/F | 5/F | 6/F | 7/F | 8/F | 9/F | 0/F | -/F | =/F |    \|   `|Ins|
      * |------------------------------------------------------------------------------------------|
      * |Tab  |    Q|    W|    E|    R|    T|    Y|    U|    I|    O|    P|    [|    ]|Backs|   Del|
      * |------------------------------------------------------------------------------------------|
@@ -32,11 +51,11 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `------------------------------------------------------------------------------------------'
      */
     [BASE] = KEYMAP(
-        MY_ESC,  KC_1   , KC_2   , KC_3 , KC_4 , KC_5 , KC_6 , KC_7 , KC_8 , KC_9   , KC_0   , KC_MINS, KC_EQL,  KC_BSLS, KC_GRV , KC_INS,
+        MY_ESC,  T1     , T2     , T3   , T4   , T5   , T6   , T7   , T8   , T9     , T10     , T11   , T12    , KC_BSLS, KC_GRV , KC_INS,
         KC_TAB,  KC_Q   , KC_W   , KC_E , KC_R , KC_T , KC_Y , KC_U , KC_I , KC_O   , KC_P   , KC_LBRC, KC_RBRC, KC_BSPC         , KC_DEL,
         KC_BSPC, MY_A   , MY_S   , MY_D , MY_F , KC_G , KC_H , MY_J , MY_K , MY_L   , KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT          , KC_PGUP,
-        _______, _______, KC_Z   , KC_X , KC_C , KC_V , KC_B , KC_N , KC_M , KC_COMM, KC_DOT , KC_SLSH, KC_CAPS         , KC_UP  , KC_PGDN,
-        _______, KC_LGUI, _______,                  KC_SPC                          , _______, MY_FN, _______, KC_LEFT, KC_DOWN, KC_RGHT),
+        _______, _______, KC_Z   , KC_X , KC_C , T_ESC, KC_B , KC_N , T_ENT, KC_COMM, KC_DOT , KC_SLSH, KC_CAPS         , KC_UP  , KC_PGDN,
+        _______, KC_LGUI, _______,                  KC_SPC                          , _______, MY_FN  , _______, KC_LEFT, KC_DOWN, KC_RGHT),
 
 
 
@@ -80,4 +99,197 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_MUTE, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______         , KC_MUTE,
         KC_VOLD, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______         , _______, KC_VOLD,
         _______, _______, _______,                            _______,                            _______, _______, _______, _______, _______, _______)
+};
+
+
+// macro routines
+static uint16_t key_timer;
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+{
+  // MACRODOWN only works in this function
+  switch(id) {
+		case 101:
+			if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(F1), END );
+				}
+				else {
+					return MACRO( T(1), END );
+				}
+			}
+			break;
+		case 102:
+			if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(F2), END );
+				}
+				else {
+					return MACRO( T(2), END );
+				}
+			}
+			break;
+		case 103:
+			if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(F3), END );
+				}
+				else {
+					return MACRO( T(3), END );
+				}
+			}
+			break;
+		case 104:
+			if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(F4), END );
+				}
+				else {
+					return MACRO( T(4), END );
+				}
+			}
+			break;
+		case 105:
+			if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(F5), END );
+				}
+				else {
+					return MACRO( T(5), END );
+				}
+			}
+			break;
+		case 106:
+			if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(F6), END );
+				}
+				else {
+					return MACRO( T(6), END );
+				}
+			}
+			break;
+		case 107:
+			if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(F7), END );
+				}
+				else {
+					return MACRO( T(7), END );
+				}
+			}
+			break;
+		case 108:
+			if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(F8), END );
+				}
+				else {
+					return MACRO( T(8), END );
+				}
+			}
+			break;
+		case 109:
+			if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(F9), END );
+				}
+				else {
+					return MACRO( T(9), END );
+				}
+			}
+			break;
+		case 110:
+			if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(F10), END );
+				}
+				else {
+					return MACRO( T(0), END );
+				}
+			}
+			break;
+		case 111:
+			if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(F11), END );
+				}
+				else {
+					return MACRO( T(MINS), END );
+				}
+			}
+			break;
+		case 112:
+			if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(F12), END );
+				}
+				else {
+					return MACRO( T(EQL), END );
+				}
+			}
+			break;
+    case 121:
+      if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(ENT), END );
+				}
+				else {
+					return MACRO( T(M), END );
+				}
+			}
+      break;
+    case 122:
+      if (record->event.pressed) {
+				key_timer = timer_read();
+			}
+			else {
+				if (timer_elapsed(key_timer) > trigger_time) {
+					return MACRO( T(ESC), END );
+				}
+				else {
+					return MACRO( T(V), END );
+				}
+			}
+      break;
+  }
+  return MACRO_NONE;
 };
