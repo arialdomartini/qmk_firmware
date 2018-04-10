@@ -20,4 +20,4 @@ RUN apt-get update && apt-get install --no-install-recommends -y build-essential
 
 VOLUME /qmk
 WORKDIR /qmk
-CMD make clean ; make whitefox:default
+CMD make whitefox:default
