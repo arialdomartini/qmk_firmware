@@ -33,9 +33,6 @@
 #define T11    M(111)
 #define T12    M(112)
 
-#define T_ENT  M(121)
-#define T_ESC M(122)
-
 const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Layer 0: Base Layer
      * ,------------------------------------------------------------------------------------------.
@@ -54,7 +51,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         MY_ESC,  T1     , T2     , T3   , T4   , T5   , T6   , T7   , T8   , T9     , T10     , T11   , T12    , KC_BSLS, KC_GRV , KC_INS,
         KC_TAB,  KC_Q   , KC_W   , KC_E , KC_R , KC_T , KC_Y , KC_U , KC_I , KC_O   , KC_P   , KC_LBRC, KC_RBRC, KC_BSPC         , KC_DEL,
         KC_BSPC, MY_A   , MY_S   , MY_D , MY_F , KC_G , KC_H , MY_J , MY_K , MY_L   , KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT          , KC_PGUP,
-        _______, _______, KC_Z   , KC_X , KC_C , T_ESC, KC_B , KC_N , T_ENT, KC_COMM, KC_DOT , KC_SLSH, KC_CAPS         , KC_UP  , KC_PGDN,
+        _______, _______, KC_Z   , KC_X , KC_C , KC_V , KC_B , KC_N , KC_M , KC_COMM, KC_DOT , KC_SLSH, KC_CAPS         , KC_UP  , KC_PGDN,
         _______, KC_LGUI, _______,                  KC_SPC                          , _______, MY_FN  , _______, KC_LEFT, KC_DOWN, KC_RGHT),
 
 
