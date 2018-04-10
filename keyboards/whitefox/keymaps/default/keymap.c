@@ -40,19 +40,19 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------------------------------------------------------------------------------------------|
      * |Tab  |    Q|    W|    E|    R|    T|    Y|    U|    I|    O|    P|    [|    ]|Backs|   Del|
      * |------------------------------------------------------------------------------------------|
-     * |BackSp|A/CRS|S/ALT|D/CTL|F/SFT|    G|    H|J/SFT|D/CTL|L/ALT|    ;|    '|  Enter   |   PgU|
+     * |Esc   |A/CRS|S/ALT|D/CTL|F/SFT|    G|    H|J/SFT|D/CTL|L/ALT|    ;|    '|  Enter   |   PgU|
      * |------------------------------------------------------------------------------------------|
-     * |          |    Z|    X|    C|    V|    B|    N|    M|    ,|    .|    /| Caps  | Up |   PgD|
+     * |Backspace |    Z|    X|    C|    V|    B|    N|    M|    ,|    .|    /| Delete| Up |   PgD|
      * |------------------------------------------------------------------------------------------|
-     * |    | Gui  |     |           Space                |MyFun|     | Gui |    | Lef | Dow | Rig|
+     * |    | Gui  |     |           Space                |MyFun|Caps | Gui |    | Lef | Dow | Rig|
      * `------------------------------------------------------------------------------------------'
      */
     [BASE] = KEYMAP(
-        MY_ESC,  T1     , T2     , T3   , T4   , T5   , T6   , T7   , T8   , T9     , T10     , T11   , T12    , KC_BSLS, KC_GRV , KC_INS,
-        KC_TAB,  KC_Q   , KC_W   , KC_E , KC_R , KC_T , KC_Y , KC_U , KC_I , KC_O   , KC_P   , KC_LBRC, KC_RBRC, KC_BSPC         , KC_DEL,
-        KC_BSPC, MY_A   , MY_S   , MY_D , MY_F , KC_G , KC_H , MY_J , MY_K , MY_L   , KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT          , KC_PGUP,
-        _______, _______, KC_Z   , KC_X , KC_C , KC_V , KC_B , KC_N , KC_M , KC_COMM, KC_DOT , KC_SLSH, KC_CAPS         , KC_UP  , KC_PGDN,
-        _______, KC_LGUI, _______,                  KC_SPC                          , _______, MY_FN  , _______, KC_LEFT, KC_DOWN, KC_RGHT),
+        MY_ESC , T1     , T2     , T3   , T4   , T5   , T6   , T7   , T8   , T9     , T10     , T11   , T12    , KC_BSLS, KC_GRV , KC_INS,
+        KC_TAB , KC_Q   , KC_W   , KC_E , KC_R , KC_T , KC_Y , KC_U , KC_I , KC_O   , KC_P   , KC_LBRC, KC_RBRC, KC_BSPC         , KC_DEL,
+        KC_ESC , MY_A   , MY_S   , MY_D , MY_F , KC_G , KC_H , MY_J , MY_K , MY_L   , KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT          , KC_PGUP,
+        KC_BSPC, _______, KC_Z   , KC_X , KC_C , KC_V , KC_B , KC_N , KC_M , KC_COMM, KC_DOT , KC_SLSH, KC_DEL          , KC_UP  , KC_PGDN,
+        _______, KC_LGUI, _______,                  KC_SPC                          , KC_CAPS, MY_FN  , _______, KC_LEFT, KC_DOWN, KC_RGHT),
 
 
 
