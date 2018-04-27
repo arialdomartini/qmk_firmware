@@ -15,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,-----------------------------------------------------------------.
    * |Esc | 1|  2|  3 |  4|  5|  6|  7|  8 |  9|  0|  -|  =|       |~ ` |
    * |------------------------------------------------------------------|
-   * |Tab  |  Q|  W|   E|  R|  T|  Y|  U|  I |  O|  P|  [|  ]|  \  |Ins |
+   * |Tab  |  Q|  W|   E|  R|  T|  Y|  U|  I |  O|  P|  [|  ]|  \  |    |
    * |     |   |   |LGUI|   |   |   |   |RGUI|   |   |   |   |     |    |
    * |------------------------------------------------------------------|
    * |       |  A|  S|   D|  F|  G|  H|  J|   K|  L|  ;|  '| Enter |CAPS|
@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
 [_BL] = KEYMAP_ANSI(
   KC_ESC,   KC_1,         KC_2,                KC_3,                 KC_4,                KC_5,   KC_6,   KC_7,               KC_8,                 KC_9,               KC_0,            KC_MINS, KC_EQL,     KC_NO,    KC_GRV, \
-  KC_TAB,   KC_Q,         KC_W,                MT(MOD_LGUI,KC_E),    KC_R,                KC_T,   KC_Y,   KC_U,               MT(MOD_RGUI,KC_I),    KC_O,               KC_P,            KC_LBRC, KC_RBRC,    KC_BSLS,  KC_INS , \
+  KC_TAB,   KC_Q,         KC_W,                MT(MOD_LGUI,KC_E),    KC_R,                KC_T,   KC_Y,   KC_U,               MT(MOD_RGUI,KC_I),    KC_O,               KC_P,            KC_LBRC, KC_RBRC,    KC_BSLS,  KC_NO , \
   KC_NO,    LT(_ML,KC_A), MT(MOD_LALT,KC_S),   MT(MOD_LCTL, KC_D),   MT(MOD_LSFT, KC_F),  KC_G,   KC_H,   MT(MOD_RSFT, KC_J), MT(MOD_RCTL,KC_K),    MT(MOD_LALT,KC_L),  KC_SCLN,         KC_QUOT,             KC_ENT ,  KC_CAPS, \
   KC_BSPC,  KC_Z,         KC_X,                KC_C,                 KC_V,                KC_B,   KC_N,   KC_M,               KC_COMM,              KC_DOT,             KC_SLSH,         KC_DEL,              KC_UP  ,  KC_NO, \
   KC_NO,    KC_NO,        KC_NO,                         LT(_FL,KC_SPC),                                                      KC_APP,               KC_NO,              KC_NO,           KC_LEFT,             KC_DOWN,  KC_RGHT),
@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * ,--------------------------------------------------------------------.
    * |   |   |   |   |   |   |   |   |    |     |   |   |   |        |    |
    * |--------------------------------------------------------------------|
-   * |     |   |   |   |   |   |    | Home|Up |End |   |   |   |     |    |
+   * |     |   |   |   |   |   |    | Home|Up |End |Ins|   |   |     |    |
    * |--------------------------------------------------------------------|
    * |      |   |   |   |   |   |    |<-  |Dn   | ->|    |   |       |    |
    * |--------------------------------------------------------------------|
@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
 [_ML] = KEYMAP_ANSI(
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______ ,\
-  _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_UP  , KC_END ,  _______, _______, _______, _______, _______, \
+  _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_UP  , KC_END , KC_INS,   _______, _______, _______, _______, \
   _______, _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______, _______, _______, \
   _______, _______, _______, BL_DEC , BL_TOGG, BL_INC , _______, KC_PGUP, _______,  KC_PGDN, _______, KC_BTN1, KC_MS_U, KC_BTN2, \
   _______, _______, _______,                 KC_ENT,                      _______, _______,  _______, KC_MS_L, KC_MS_D, KC_MS_R),
