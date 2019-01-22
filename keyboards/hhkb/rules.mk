@@ -73,7 +73,7 @@ CUSTOM_MATRIX = yes    # Custom matrix file for the HHKB
 # BLUETOOTH_ENABLE = yes  # Enable Bluetooth with the Adafruit EZ-Key HID
 
 
-# HHKB_RN42_ENABLE = yes  # Enable support for hasu's BT alt controller -- code borrowed from tmk source tree.
+HHKB_RN42_ENABLE = yes  # Enable support for hasu's BT alt controller -- code borrowed from tmk source tree.
 
 # Either uncomment the HHKB_RN42_ENABLE line above, or run make enabling the
 # feature. Be sure to clean any existing build before trying to enable rn42
