@@ -12,7 +12,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* Layer _BL: (Base Layer) Default Layer
    * ,---------------------------------------------------------------------.
-   * |    | 1   |  2|  3 |  4|  5|  6|  7|  8 |  9|  0|  -|  =|  ~ `  |    |
+   * |~`  | 1   |  2|  3 |  4|  5|  6|  7|  8 |  9|  0|  -|  =|       |    |
    * |---------------------------------------------------------------------|
    * |Tab  |  Q   |  W|   E|  R|  T|  Y|  U|  I |  O|  P|  [|  ]|  \  |    |
    * |     |_MEDIA|   |LGUI|   |   |   |   |RGUI|   |   |   |   |     |    |
@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `---------------------------------------------------------------------'
    */
 [_BL] = LAYOUT_ansi(
-  KC_NO,    KC_1,         KC_2,                KC_3,                 KC_4,                KC_5,   KC_6,   KC_7,               KC_8,                 KC_9,               KC_0,            KC_MINS, KC_EQL,     KC_GRV,   KC_NO,  \
+  KC_GRV,   KC_1,         KC_2,                KC_3,                 KC_4,                KC_5,   KC_6,   KC_7,               KC_8,                 KC_9,               KC_0,            KC_MINS, KC_EQL,     KC_NO,   KC_NO,  \
   KC_TAB,   LT(_MEDIA,KC_Q),         KC_W,                MT(MOD_LGUI,KC_E),    KC_R,                KC_T,   KC_Y,   KC_U,               MT(MOD_RGUI,KC_I),    KC_O,               KC_P,            KC_LBRC, KC_RBRC,    KC_BSLS,  KC_NO , \
   KC_ESC,   LT(_ML,KC_A), MT(MOD_LALT,KC_S),   MT(MOD_LCTL, KC_D),   MT(MOD_LSFT, KC_F),  KC_G,   KC_H,   MT(MOD_RSFT, KC_J), MT(MOD_RCTL,KC_K),    MT(MOD_LALT,KC_L),  KC_SCLN,         KC_QUOT,             KC_ENT ,  KC_NO, \
   KC_BSPC,  KC_Z,         KC_X,                KC_C,                 KC_V,                KC_B,   KC_N,   KC_M,               KC_COMM,              KC_DOT,             KC_SLSH,         KC_DEL,              KC_UP  ,  KC_NO, \
