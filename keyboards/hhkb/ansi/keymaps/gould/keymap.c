@@ -8,6 +8,17 @@
 #define _MD 2
 #define _FL 3
 
+#define MY_Q LT(_MD,KC_Q)
+#define MY_A LT(_ML,KC_A)
+#define MY_S MT(MOD_LALT,KC_S)
+#define MY_E MT(MOD_LGUI, KC_E)
+#define MY_D MT(MOD_LCTL,KC_D)
+#define MY_F MT(MOD_LSFT,KC_F)
+#define MY_J MT(MOD_RSFT,KC_J)
+#define MY_I MT(MOD_RGUI,KC_I)
+#define MY_K MT(MOD_RCTL,KC_K)
+#define MY_L MT(MOD_LALT,KC_L)
+
 #define _____ KC_NO
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -31,22 +42,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     */
 
     [_BL] = LAYOUT( //  default layer
-        KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, _____, _____,
-        KC_TAB, LT(_MD,KC_Q), KC_W, MT(MOD_LGUI, KC_E), KC_R, KC_T, KC_Y, KC_U, MT(MOD_RGUI,KC_I), KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,
-        KC_ESC, LT(_ML,KC_A), MT(MOD_LALT,KC_S), MT(MOD_LCTL,KC_D), MT(MOD_LSFT,KC_F), KC_G, KC_H, MT(MOD_RSFT,KC_J), MT(MOD_RCTL,KC_K), MT(MOD_LALT,KC_L), KC_SCLN, KC_QUOT, KC_ENT,
-        KC_BSPC, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_DEL, _____,
-        _____, _____, /*        */ LT(_FL,KC_SPC), KC_APP, _____),
+        KC_GRV,  KC_1,  KC_2,  KC_3,  KC_4,  KC_5,  KC_6,  KC_7,  KC_8,    KC_9,    KC_0,     KC_MINS,  KC_EQL,   _____,    _____,
+        KC_TAB,  MY_Q,  KC_W,  MY_E,  KC_R,  KC_T,  KC_Y,  KC_U,  MY_I,    KC_O,    KC_P,     KC_LBRC,  KC_RBRC,  KC_BSLS,
+        KC_ESC,  MY_A,  MY_S,  MY_D,  MY_F,  KC_G,  KC_H,  MY_J,  MY_K,    MY_L,    KC_SCLN,  KC_QUOT,  KC_ENT,
+        KC_BSPC, KC_Z,  KC_X,  KC_C,  KC_V,  KC_B,  KC_N,  KC_M,  KC_COMM, KC_DOT,  KC_SLSH,  KC_DEL,   _____,
+        _____,   _____,               LT(_FL,KC_SPC),                KC_APP,      _____),
 
     /* Layer _MV: Movement Layer
-      |------+-----+-----+-----+----+----+----+----+-----+-----+-----+-----+-------+-------+-------|
-      |      |     |     |     |    |    |    |    |     |     |     |     |       |       |       |
-      |------+-----+-----+-----+----+----+----+----+-----+-----+-----+-----+-------+-------+-------|
-      |      |     |     | LGUI|    |    |    |Home| Up  | End | Ins |     |       |       |CpsLck |
-      |------+-----+-----+-----+----+----+----+----+-----+-----+-----+-----+-------+-------+-------|
-      |      |     | ALT | CTL | SFT|    |    | <- | Dn  | ->  |     |     |       |       |       |
-      |------+-----+-----+-----+----+----+----+----+-----+-----+-----+-----+-------+-------+-------|
-      |      |     |     |     |    |    |    |    | PgUp|     |PgDn |     |       |       |       |
-      |------+-----+-----+-----+----+----+----+----+-----+-----+-----+-----+-------+-------+-------|
+      |------+-----+-----+-----+----+----+----+----+-----+-----+-------+-----+-------+-----+----|
+      |      |     |     |     |    |    |    |    |     |     |       |     |       |     |    |
+      |------+-----+-----+-----+----+----+----+----+-----+-----+-------+-----+-------+-----+----|
+      |      |     |     | LGUI|    |    |    |Home| Up  | End | Ins   |     |       |     |    |
+      |------+-----+-----+-----+----+----+----+----+-----+-----+-------+-----+-------+-----+----|
+      |      |     | ALT | CTL | SFT|    |    | <- | Dn  | ->  | CpLck |     |       |     |    |
+      |------+-----+-----+-----+----+----+----+----+-----+-----+-------+-----+-------+-----+----|
+      |      |     |     |     |    |    |    |    | PgUp|     |PgDn   |     |       |     |    |
+      |------+-----+-----+-----+----+----+----+----+-----+-----+-------+-----+-------+-----+----|
 
                  |------+------+----------------------+------+------+
                  |      |      |       Enter          |      |      |
@@ -56,8 +67,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ML] = LAYOUT(
         _____, _____, _____,   _____,   _____,   _____, _____,   _____,   _____,   _____,    _____,  _____, _____, _____, _____,
-        _____, _____, _____,   KC_TRNS,   _____,   _____, _____, KC_HOME, KC_UP,   KC_END,   KC_INS, _____, _____, KC_CAPS,
-        _____, _____, KC_TRNS, KC_TRNS, KC_TRNS, _____, _____,   KC_LEFT, KC_DOWN, KC_RIGHT, _____,  _____, _____,
+        _____, _____, _____,   KC_TRNS,   _____,   _____, _____, KC_HOME, KC_UP,   KC_END,   KC_INS, _____, _____, _____,
+        _____, _____, KC_TRNS, KC_TRNS, KC_TRNS, _____, _____,   KC_LEFT, KC_DOWN, KC_RIGHT, KC_CAPS,  _____, _____,
         _____, _____, _____,   _____,   _____,   _____, _____,   KC_PGUP, _____,   KC_PGDN,  _____,  _____, _____,
         _____, _____, KC_ENT,  _____,   _____),
 
