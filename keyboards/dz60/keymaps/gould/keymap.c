@@ -46,8 +46,8 @@
 
 
 
-#define MY_SPC LT(SYMBOLS, KC_SPC)
-#define MY_BSPC LT(NUMBERS, KC_BSPC)
+#define MY_SPC LT(NUMBERS, KC_SPC)
+#define MY_BSPC LT(SYMBOLS, KC_BSPC)
 #define MY_DEL LT(FUNCTIONS, KC_DEL)
 
 #define MY_A LT(MOVEMENTS, KC_A)
@@ -71,10 +71,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      |-------+---+---+------+---+---+---+---+------+---+---+------+-----+------|
             |----+----+----+------+--------+------+----+----|----|
             |    |    |    |BckSpc|  Space | Del  |    |    |    |
-            |    |    |    | SYMB | NUMBERS| FUNCT|    |    |    |
+            |    |    |    | NUMB | SYMB   | FUNCT|    |    |    |
             |----+----+----+------+--------+------+----+----+----|
 */
-  
+
 	[BASE] = LAYOUT(
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______,  _______,
     _______, MY_Q,    KC_W,    MY_E,    KC_R,    KC_T,    KC_Y,    KC_U,    MY_I,    KC_O,    KC_P,    _______, _______,  _______,
