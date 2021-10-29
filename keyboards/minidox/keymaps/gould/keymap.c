@@ -19,11 +19,30 @@
 
 
 #define MY_F MT(MOD_LSFT, KC_F)
+#define MY_4 MT(MOD_LSFT, KC_4)
+#define MY_F4 MT(MOD_LSFT, KC_F4)
+
 #define MY_J MT(MOD_RSFT, KC_J)
+#define MY_7 MT(MOD_RSFT, KC_7)
+#define MY_F7 MT(MOD_RSFT, KC_F7)
+
 #define MY_D MT(MOD_LCTL, KC_D)
+#define MY_3 MT(MOD_LCTL, KC_3)
+#define MY_F3 MT(MOD_LCTL, KC_F3)
+
 #define MY_K MT(MOD_RCTL, KC_K)
+#define MY_8 MT(MOD_RCTL, KC_8)
+#define MY_F8 MT(MOD_RCTL, KC_F8)
+
 #define MY_S MT(MOD_LALT, KC_S)
+#define MY_2 MT(MOD_LALT, KC_2)
+#define MY_F2 MT(MOD_LALT, KC_F2)
+
 #define MY_L MT(MOD_LALT, KC_L)
+#define MY_9 MT(MOD_LALT, KC_9)
+#define MY_F9 MT(MOD_LALT, KC_F9)
+
+
 #define MY_E MT(MOD_LGUI, KC_E)
 #define MY_I MT(MOD_RGUI, KC_I)
 #define MY_DEL LT(_FUNL, KC_DEL)
@@ -79,10 +98,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_CURS] = LAYOUT_split_3x5_3( \
-  _,       _,       _______, _,       _,            _,        KC_HOME, KC_UP,   KC_END,   KC_INS,  \
-  _,       _______, _______, _______, _,            _,        KC_LEFT, KC_DOWN, KC_RIGHT, KC_QUOTE,  \
-  _,       _,       _,       _,       _,            _,        KC_PGUP, KC_CAPS,     KC_PGDN,   KC_UNDS,  \
-                    _,       _,       _,            KC_ENTER, KC_TAB, _                 \
+  _,       _,       _______, _,       _,            _,         KC_HOME,  KC_UP,    KC_END,    KC_INS,  \
+  _,       _______, _______, _______, _,            _,         KC_LEFT,  KC_DOWN,  KC_RIGHT,  KC_QUOTE,  \
+  _,       _,       _,       _,       _,            _,         KC_PGUP,  KC_CAPS,  KC_PGDN,   KC_UNDS,  \
+                    _,       _,       _,            KC_ENTER,  KC_TAB,   _                 \
 ),
 /* NUM
  *
@@ -101,10 +120,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                             tttttttttttttttttttttttttttttttttttttttttttttttttttttttttt  `------'    `------'
  */
 [_NUM] = LAYOUT_split_3x5_3( \
-  _,       _,       _,       _,       _,          _,       KC_1,    KC_2,      KC_3,    _,   \
-  _, _______, _______, _______, _______,          _,       KC_4,    KC_5,      KC_6,    KC_0,   \
-  _,       _,       _,       _,       _,          _,       KC_7,    KC_8,      KC_9,    _,    \
-                    _,       _______, _,          _,       _,       _ \
+  _,       _,       _,       _,       _,          _,       KC_MINS,   KC_PEQL,  KC_PPLS,  _,      \
+  KC_1,    MY_2,    MY_3,    MY_4,    KC_5,       KC_6,    MY_7,      MY_8,     MY_9,     KC_0,   \
+  _,       _,       _,       _,       _,          _,       KC_UNDS,   KC_COMM,  KC_DOT,   _,      \
+                    _,       _______, _,          _,       _,         _ \
 ),
 /* FUNL
  *
@@ -123,10 +142,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_FUNL] = LAYOUT_split_3x5_3( \
-  _,       _,       _,       _,       _,          _,       KC_F1,    KC_F2,      KC_F3,    KC_F11,   \
-  _, _______, _______, _______, _______,          _,       KC_F4,    KC_F5,      KC_F6,    KC_F10,   \
-  _,       _,       _,       _,       _,          _,       KC_F7,    KC_F8,      KC_F9,    KC_F12,    \
-                    _,       KC_ESC,  _,          _,       _,       _ \
+  _,       _,       _,       _,       _,          _,       _,        _,        _,       _,        \
+  KC_F1,   MY_F2,   MY_F3,   MY_F4,   KC_F5,     KC_F6,   MY_F7,    MY_F8,    MY_F9,   KC_F10,   \
+  KC_F11,  KC_F12,  _,       _,       _,          _,       _,        _,        _,       _,        \
+                    _,       _,       _,          _,       _,       _ \
 ),
 /* SYMB
  *
@@ -145,9 +164,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_SYMB] = LAYOUT_split_3x5_3( \
-  KC_TILD, _,       _,       _, _,          _, KC_MINS,   KC_PEQL, KC_PPLS, KC_PIPE,   \
-  KC_GRV,  KC_LCBR, KC_LBRC, KC_LPRN, _,          _, KC_RPRN,   KC_RBRC, KC_RCBR, KC_BSLS,   \
-  _,       _,       _,       _,       _,          _,       _,    _,      _,       _,         \
+  KC_TILD, _,       _,       _, _,                _,       _,       _,       _,          KC_PIPE,   \
+  KC_GRV,  KC_LCBR, KC_LBRC, KC_LPRN, _,          _,       KC_RPRN, KC_RBRC, KC_RCBR,    KC_BSLS,   \
+  _,       _,       _,       _,       _,          _,       _,       _,       _,          _,         \
                     _,       _, _______,          _,       _,       _ \
 )
 };
