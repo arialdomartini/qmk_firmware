@@ -13,22 +13,33 @@
 #define DANG 7
 #define ONEH 8
 
-// Modificators: Shift, Alt, Ctrl, GUI
 #define MY_F MT(MOD_LSFT, KC_F)
+#define MY_4 MT(MOD_LSFT, KC_4)
+#define MY_F4 MT(MOD_LSFT, KC_F4)
+
 #define MY_J MT(MOD_RSFT, KC_J)
+#define MY_7 MT(MOD_RSFT, KC_7)
+#define MY_F7 MT(MOD_RSFT, KC_F7)
 
 #define MY_D MT(MOD_LCTL, KC_D)
+#define MY_3 MT(MOD_LCTL, KC_3)
+#define MY_F3 MT(MOD_LCTL, KC_F3)
+
 #define MY_K MT(MOD_RCTL, KC_K)
+#define MY_8 MT(MOD_RCTL, KC_8)
+#define MY_F8 MT(MOD_RCTL, KC_F8)
+
+#define MY_S MT(MOD_LALT, KC_S)
+#define MY_2 MT(MOD_LALT, KC_2)
+#define MY_F2 MT(MOD_LALT, KC_F2)
+
+#define MY_L MT(MOD_LALT, KC_L)
+#define MY_9 MT(MOD_LALT, KC_9)
+#define MY_F9 MT(MOD_LALT, KC_F9)
+
 
 #define MY_S MT(MOD_LALT, KC_S)
 #define MY_L MT(MOD_LALT, KC_L)
-
-#define MY_2 MT(MOD_LALT, KC_2)
-#define MY_3 MT(MOD_LCTL, KC_3)
-#define MY_4 MT(MOD_LSFT, KC_4)
-#define MY_7 MT(MOD_LSFT, KC_7)
-#define MY_8 MT(MOD_LCTL, KC_8)
-#define MY_9 MT(MOD_LALT, KC_9)
 
 #define MY_E MT(MOD_LGUI, KC_E)
 #define MY_I MT(MOD_RGUI, KC_I)
@@ -128,7 +139,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [FUNCTIONS] = LAYOUT(
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10, _______,  _______,
+    _______, KC_F1,   MY_F2,   MY_F3,   MY_F4,   KC_F5,   KC_F6,   MY_F7,   MY_F8,   MY_F9,   KC_F10, _______,  _______,
     _______, _______, KC_F11,  KC_F12, _______, _______, _______, _______, _______, _______, _______, _______, _______,_______,
     _______, _______, _______, KC_ESC, _______, _______, _______, _______, _______, _______, _______),
 
