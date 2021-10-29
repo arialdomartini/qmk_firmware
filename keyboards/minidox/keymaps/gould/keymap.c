@@ -120,9 +120,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                             tttttttttttttttttttttttttttttttttttttttttttttttttttttttttt  `------'    `------'
  */
 [_NUM] = LAYOUT_split_3x5_3( \
-  _,       _,       _,       _,       _,          _,       KC_MINS,   KC_PEQL,  KC_PPLS,  _,      \
+  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,    _,       KC_MINS,   KC_PEQL,  KC_PPLS,  _,      \
   KC_1,    MY_2,    MY_3,    MY_4,    KC_5,       KC_6,    MY_7,      MY_8,     MY_9,     KC_0,   \
-  _,       _,       _,       _,       _,          _,       KC_UNDS,   KC_COMM,  KC_DOT,   _,      \
+  KC_CIRC, KC_AMPR, _,       _,          _,       _,       KC_UNDS,   KC_COMM,  KC_DOT,   _,      \
                     _,       _______, _,          _,       _,         _ \
 ),
 /* FUNL
