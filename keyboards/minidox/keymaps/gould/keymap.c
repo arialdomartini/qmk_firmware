@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_Q,    KC_W,    MY_E,    KC_R,    KC_T,         KC_Y,    KC_U,    MY_I,    KC_O,    KC_P,    \
   MY_A,    MY_S,    MY_D,    MY_F,    KC_G,         KC_H,    MY_J,    MY_K,    MY_L,    KC_SCLN, \
   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,         KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, \
-       _______,     LT(_SYMB, KC_BSPC),  MY_SPC,    MY_SPC,  MY_DEL,  _______                    \
+    _______,    LT(_SYMB, KC_BSPC),   MY_SPC,       MY_SPC,  MY_DEL,  _______                   \
 ),
 
 /* CURS
@@ -145,7 +145,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _,       _,       _,       _,       _,          _,       _,        _,        _,       _,        \
   KC_F1,   MY_F2,   MY_F3,   MY_F4,   KC_F5,     KC_F6,   MY_F7,    MY_F8,    MY_F9,   KC_F10,   \
   KC_F11,  KC_F12,  _,       _,       _,          _,       _,        _,        _,       _,        \
-                    _,       _,       _,          _,       _,       _ \
+                    _,       KC_ESC,       _,          _,       _,       _ \
 ),
 /* SYMB
  *
