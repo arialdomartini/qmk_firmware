@@ -9,7 +9,7 @@ git fetch --all --recurse-submodules
 Then build and flash the firmware with:
 
 ``` sh
-qmk flash -kb minidox -km gloud
+qmk flash -kb minidox -km gould
 ```
 
 When asked, click the reset button under master keyboard (the left half), keeping the right part connected.
