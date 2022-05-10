@@ -55,6 +55,30 @@
 #define MY_G MT(MOD_HYPR, KC_G)
 #define MY_H MT(MOD_HYPR, KC_H)
 
+
+enum custom_keycodes {
+    MYARROW = SAFE_RANGE,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+    case MYARROW:
+        if (record->event.pressed) {
+            if ((get_mods() & MOD_BIT(KC_LSFT)) == MOD_BIT(KC_LSFT)) {
+                unregister_code(KC_LSFT);
+                SEND_STRING("=>");
+                register_code(KC_LSFT);
+            }
+            else
+                SEND_STRING("->");
+        }
+        break;
+    }
+    return true;
+};
+
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    /* Base Layer
@@ -130,7 +154,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[NUMBERS] = LAYOUT(
     _______, _______, _______,  _______,  _______,  _______, _______, _______,  _______,  _______, _______, _______, _______, _______, _______,
-    _______, KC_EXLM, KC_AT,    KC_HASH,  KC_DLR,   KC_PERC, _______, KC_MINS,  KC_EQL,   KC_PPLS, KC_ASTR, _______, _______, _______,
+    _______, KC_EXLM, KC_AT,    KC_HASH,  KC_DLR,   KC_PERC, MYARROW, KC_MINS,  KC_EQL,   KC_PPLS, KC_ASTR, _______, _______, _______,
     _______, KC_1,    MY_2,     MY_3,     MY_4 ,    KC_5,    KC_6,    MY_7,     MY_8,     MY_9,    KC_0,  _______, _______,
     _______, _______, KC_CIRC, KC_AMPR,  _______,  _______, _______, _______,  KC_UNDS,  KC_COMM, KC_DOT, _______, _______, _______,
     _______, _______, _______,     KC_BSPC,                  _______,           KC_DEL,  _______, _______,  _______,  _______, _______),
