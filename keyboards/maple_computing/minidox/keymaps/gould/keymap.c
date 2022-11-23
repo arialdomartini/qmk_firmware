@@ -54,6 +54,32 @@
 /* #define MY_H MT(MOD_HYPR, KC_H) */
 
 
+
+enum custom_keycodes {
+    MYARROW = SAFE_RANGE,
+    MYDARROW
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case MYARROW:
+        if (record->event.pressed) {
+          SEND_STRING("->");
+        }
+        break;
+    case MYDARROW:
+        if (record->event.pressed) {
+          SEND_STRING("=>");
+        }
+        break;
+  };
+  return true;
+}
+
+
+
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Base
@@ -120,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                             tttttttttttttttttttttttttttttttttttttttttttttttttttttttttt  `------'    `------'
  */
 [_NUM] = LAYOUT_split_3x5_3( \
-  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,    _,       KC_MINS,   KC_PEQL,  KC_PPLS,  KC_ASTR,      \
+  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,    MYARROW,       KC_MINS,   KC_EQL,  KC_PPLS,  KC_ASTR,      \
   KC_1,    MY_2,    MY_3,    MY_4,    KC_5,       KC_6,    MY_7,      MY_8,     MY_9,     KC_0,   \
   KC_CIRC, KC_AMPR, _,       _,          _,       _,       _      ,   KC_COMM,  KC_DOT,   KC_SLSH,      \
                     _,       _______, _,          _,       _,         _ \
@@ -164,7 +190,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_SYMB] = LAYOUT_split_3x5_3( \
-  _,       _,       KC_LT,   _,       _,          _,       KC_UNDS, KC_GT,   KC_TILD,  KC_PIPE,   \
+  _,       _,       KC_LT,   _,       _,          MYDARROW,KC_UNDS, KC_GT,   KC_TILD,  KC_PIPE,   \
   _,       KC_LCBR, KC_LBRC, KC_LPRN, _,          _,       KC_RPRN, KC_RBRC, KC_RCBR,  KC_GRV,    \
   _,       _,       _,       _,       _,          _,       _,       _,       _,        KC_BSLS,   \
                     _,       _, _______,          _,       _,       _ \
