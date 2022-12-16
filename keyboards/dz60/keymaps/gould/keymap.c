@@ -58,21 +58,21 @@
 
 enum custom_keycodes {
     MYARROW = SAFE_RANGE,
+    MYDARROW
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
     case MYARROW:
         if (record->event.pressed) {
-            if ((get_mods() & MOD_BIT(KC_LSFT)) == MOD_BIT(KC_LSFT)) {
-                unregister_code(KC_LSFT);
-                SEND_STRING("=>");
-                register_code(KC_LSFT);
-            }
-            else
-                SEND_STRING("->");
+            SEND_STRING("->");
         }
-        break;
+        return false;
+    case MYDARROW:
+        if (record->event.pressed) {
+            SEND_STRING("=>");
+        }
+        return false;
     }
     return true;
 };
@@ -118,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[SYMBOLS] = LAYOUT(
     _______, _______, _______, _______,  _______,  _______, _______,   _______,  _______,  _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, KC_LT,    _______,  _______,  _______,  KC_UNDS,  KC_GT, KC_TILD, KC_PIPE, _______,  _______, _______,
+    _______, _______, _______, KC_LT,    _______,  _______, MYDARROW,  KC_UNDS,  KC_GT, KC_TILD, KC_PIPE, _______,  _______, _______,
     _______, _______,  KC_LCBR, KC_LBRC, KC_LPRN,  _______, _______, KC_RPRN, KC_RBRC,  KC_RCBR, KC_GRV, _______, _______,
     _______, _______, _______, _______,  _______,  _______, _______, _______,  _______,  _______, _______, KC_BSLS, _______, _______,
     _______, _______, _______,     KC_BSPC,                 _______,           KC_DEL, _______, _______,  _______,  _______, _______),
