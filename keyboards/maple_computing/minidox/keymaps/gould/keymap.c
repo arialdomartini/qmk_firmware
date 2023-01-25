@@ -169,7 +169,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                  |      |      |      |    |      |  Tab |      |
  *                  `-------------|      |    |Return|------+------.
  *                                |      |    |      |
- *                             tttttttttttttttttttttttttttttttttttttttttttttttttttttttttt  `------'    `------'
+ *                                `------'    `------'
  */
 [_NUM] = LAYOUT_split_3x5_3( \
   KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,    MYARROW,       KC_MINS,   KC_EQL,  KC_PPLS,  KC_ASTR,      \
@@ -217,7 +217,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_SYMB] = LAYOUT_split_3x5_3( \
   _,       _,       KC_LT,   _,       _,          MYDARROW,KC_UNDS, KC_GT,   KC_TILD,  KC_PIPE,   \
-  _,       KC_LCBR, KC_LBRC, KC_LPRN, _,          _,       KC_RPRN, KC_RBRC, KC_RCBR,  _,    \
+  _,       KC_LCBR, KC_LBRC, KC_LPRN, _,          _,       KC_RPRN, KC_RBRC, KC_RCBR,  KC_ASTR,    \
   _,       _,       _,       _,       _,          _,       _,       _,       _,        KC_BSLS,   \
                     _,       _, _______,          _,       _,       _ \
 )
