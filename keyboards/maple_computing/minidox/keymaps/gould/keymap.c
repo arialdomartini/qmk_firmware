@@ -49,7 +49,7 @@
 #define MY_DEL LT(_FUNL, KC_DEL)
 #define MY_SPC LT(_NUM, KC_SPC)
 #define MY_RET LT(_CURS, KC_ENTER)
-#define MY_A LT(_CURS, KC_A)
+#define MY_A LT(MOD_LGUI, KC_A)
 #define MY_SCLN LT(_CO, KC_SCLN)
 
 /* #define MY_Q LT(MEDI, KC_Q) */
@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |Super |      |      |           |      |      | Super|      |      |
  * |------+------+------+------+------|           |------+------+------+------+------|
  * |   A  |   S  |   D  |   F  |   G  |           |   H  |   J  |   K  |   L  |   ;  |
- * | CURS |  Alt | Ctrl |Shift |      |           |      | Shift| Ctrl | Alt  |      |
+ * | Super|  Alt | Ctrl |Shift |      |           |      | Shift| Ctrl | Alt  |      |
  * |------+------+------+------+------|           |------+------+------+------+------|
  * |   Z  |   X  |   C  |   V  |   B  |           |   N  |   M  |   ,  |   .  |   /  |
  * `----------------------------------'           `----------------------------------'
