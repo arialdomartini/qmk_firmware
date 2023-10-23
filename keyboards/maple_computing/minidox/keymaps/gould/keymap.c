@@ -10,7 +10,6 @@
 #define _NUM  2
 #define _SYMB 3
 #define _FUNL 5
-#define _CO   6
 
 #define _ XXXXXXX 
 
@@ -49,7 +48,6 @@
 #define MY_SPC LT(_NUM, KC_SPC)
 #define MY_RET LT(_CURS, KC_ENTER)
 #define MY_A LT(MOD_LGUI, KC_A)
-#define MY_SCLN LT(_CO, KC_SCLN)
 
 /* #define MY_Q LT(MEDI, KC_Q) */
 /* #define MY_G MT(MOD_HYPR, KC_G) */
@@ -104,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_BASE] = LAYOUT_split_3x5_3( \
   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,         KC_Y,    KC_U,    MY_I,    KC_O,    KC_P,    \
-  MY_A,    MY_S,    MY_D,    MY_F,    KC_G,         KC_H,    MY_J,    MY_K,    MY_L,    MY_SCLN, \
+  MY_A,    MY_S,    MY_D,    MY_F,    KC_G,         KC_H,    MY_J,    MY_K,    MY_L,    KC_SCLN, \
   KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,         KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, \
     _______,    LT(_SYMB, KC_BSPC),   MY_RET,       MY_SPC,  MY_DEL,  _______                   \
 ),
@@ -130,28 +128,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _,       _______, _______, _______, _,            _,         KC_LEFT,  KC_DOWN,  KC_RIGHT,  KC_QUOTE,  \
   _,       _,       _,       _,       _,            _,         KC_PGUP,  KC_CAPS,  KC_PGDN,   KC_BSLS,  \
                     _,       _,       _,            KC_ENTER,  KC_TAB,   _                 \
-),
-
-/* CO
- *
- * ,----------------------------------.           ,----------------------------------.
- * |      |      |      |      |      |           |      |      |      |      |      |
- * |------+------+------+------+------|           |------+------+------+------+------|
- * |   `  |      |      |      |      |           |      |      |      |      |      |
- * |------+------+------+------+------|           |------+------+------+------+------|
- * |      |      |      |      |      |           |      |      |      |      |      |
- * `----------------------------------'           `----------------------------------'
- *                  ,--------------------.    ,------,-------------.
- *                  |      |      |      |    |      |      |      |
- *                  `-------------|      |    |      |------+------.
- *                                |      |    |      |
- *                                `------'    `------'
- */
-[_CO] = LAYOUT_split_3x5_3( \
-  _,       _,       _,  _,       _,            _,         _,  _,    _,    _,  \
-  KC_GRV,       _, _, _, _,            _,         _,  _,  _,  _,  \
-  _,       _,       _,       _,       _,            _,         _,  _,  _,   _,  \
-                    _,       _,       _,            _,         _,   _                 \
 ),
 
 /* NUM
