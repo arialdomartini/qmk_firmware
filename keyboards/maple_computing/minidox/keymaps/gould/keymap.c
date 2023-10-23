@@ -38,16 +38,27 @@
 #define MY_2 MT(MOD_LALT, KC_2)
 #define MY_F2 MT(MOD_LALT, KC_F2)
 
-#define MY_SCLN MT(MOD_LGUI, KC_SCLN)
+
 #define MY_L MT(MOD_LALT, KC_L)
 #define MY_9 MT(MOD_LALT, KC_9)
 #define MY_F9 MT(MOD_LALT, KC_F9)
+
+#define MY_A MT(MOD_LGUI, KC_A)
+#define MY_1 MT(MOD_LGUI, KC_1)
+#define MY_F1 MT(MOD_LGUI, KC_F1)
+
+
+#define MY_SCLN MT(MOD_RGUI, KC_SCLN)
+#define MY_0 MT(MOD_RGUI, KC_0)
+#define MY_F10 MT(MOD_RGUI, KC_F10)
+
+
 
 
 #define MY_DEL LT(_FUNL, KC_DEL)
 #define MY_SPC LT(_NUM, KC_SPC)
 #define MY_RET LT(_CURS, KC_ENTER)
-#define MY_A LT(MOD_LGUI, KC_A)
+
 
 /* #define MY_Q LT(MEDI, KC_Q) */
 /* #define MY_G MT(MOD_HYPR, KC_G) */
@@ -110,10 +121,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* CURS9
  *
  * ,----------------------------------.           ,----------------------------------.
- * |      |      | Super|      |      |           | Ins  | Home |  Up  | End  |  `   |
+ * |      |      |      |      |      |           | Ins  | Home |  Up  | End  |  `   |
  * |------+------+------+------+------|           |------+------+------+------+------|
  * |      |      |      |      |      |           |      |  <-  |      |  ->  |  '   |
- * |      |  Alt | Ctrl |Shift |      |           |      |      | Down |      |  "   |
+ * |Super |  Alt | Ctrl |Shift |      |           |      |      | Down |      |  "   |
  * |------+------+------+------+------|           |------+------+------+------+------|
  * |      |      |      |      |      |           |      | PgUp | CAPS |PgDown|      |
  * `----------------------------------'           `----------------------------------'
@@ -125,7 +136,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_CURS] = LAYOUT_split_3x5_3( \
   _,       _,       _______, _,       _,            KC_INS,    KC_HOME,  KC_UP,    KC_END,    KC_GRV,  \
-  _,       _______, _______, _______, _,            _,         KC_LEFT,  KC_DOWN,  KC_RIGHT,  KC_QUOTE,  \
+  _______, _______, _______, _______, _,            _,         KC_LEFT,  KC_DOWN,  KC_RIGHT,  KC_QUOTE,  \
   _,       _,       _,       _,       _,            _,         KC_PGUP,  KC_CAPS,  KC_PGDN,   KC_BSLS,  \
                     _,       _,       _,            KC_ENTER,  KC_TAB,   _                 \
 ),
@@ -141,14 +152,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |           |      |      |      |      |      |
  * `----------------------------------'           `----------------------------------'
  *                  ,--------------------.    ,------,-------------.
- *                  |      |      |      |    |      |  Tab |      |
- *                  `-------------|      |    |Return|------+------.
+ *                  |      |      |      |    |      |      |      |
+ *                  `-------------|      |    |      |------+------.
  *                                |      |    |      |
  *                                `------'    `------'
  */
 [_NUM] = LAYOUT_split_3x5_3( \
   KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,    MYARROW,       KC_MINS,   KC_EQL,  KC_PPLS,  KC_ASTR,      \
-  KC_1,    MY_2,    MY_3,    MY_4,    KC_5,       KC_6,    MY_7,      MY_8,     MY_9,     KC_0,   \
+  MY_1,    MY_2,    MY_3,    MY_4,    KC_5,       KC_6,    MY_7,      MY_8,     MY_9,     MY_0,   \
   KC_CIRC, KC_AMPR, _,       _,          _,       _,       _      ,   KC_COMM,  KC_DOT,   KC_SLSH,      \
                     _,       _______, _,          _,       _,         _ \
 ),
@@ -170,7 +181,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_FUNL] = LAYOUT_split_3x5_3( \
   QK_BOOT, _,       _,       _,       _,          _,       _,        _,        _,       _,        \
-  KC_F1,   MY_F2,   MY_F3,   MY_F4,   KC_F5,     KC_F6,   MY_F7,    MY_F8,    MY_F9,   KC_F10,   \
+  MY_F1,   MY_F2,   MY_F3,   MY_F4,   KC_F5,     KC_F6,   MY_F7,    MY_F8,    MY_F9,   MY_F10,   \
   KC_F11,  KC_F12,  _,       _,       _,          _,       _,        _,        _,       _,        \
                     _,       KC_ESC,       _,          _,       _,       _ \
 ),
