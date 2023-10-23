@@ -48,7 +48,7 @@
 #define MY_I MT(MOD_RGUI, KC_I)
 #define MY_DEL LT(_FUNL, KC_DEL)
 #define MY_SPC LT(_NUM, KC_SPC)
-#define MY_RET LT(_NUM, KC_ENTER)
+#define MY_RET LT(_CURS, KC_ENTER)
 #define MY_A LT(_CURS, KC_A)
 #define MY_SCLN LT(_CO, KC_SCLN)
 
@@ -98,8 +98,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `----------------------------------'           `----------------------------------'
  *                  ,--------------------.    ,------,-------------.
  *                  |      | BckSp|      |    |      | Del  |      |
- *                  |      | SYMB |      |    |Space | FUNL |      |
- *                  `-------------| RET  |    |NUMB  |------+------.
+ *                  |      | SYMB | RET  |    |Space | FUNL |      |
+ *                  `-------------| CURS |    |NUMB  |------+------.
  *                                |      |    |      |
  *                                `------'    `------'
  */
