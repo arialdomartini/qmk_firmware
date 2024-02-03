@@ -179,9 +179,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_FUNL] = LAYOUT_split_3x5_3( \
-  QK_BOOT, _,       _,       _,       _,          _,       _,        _,        _,       _,        \
+  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,    KC_F16,  KC_F17,   KC_F18,   KC_F19,  KC_F20,   \
   MY_F1,   MY_F2,   MY_F3,   MY_F4,   KC_F5,     KC_F6,   MY_F7,    MY_F8,    MY_F9,   MY_F10,   \
-  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,    KC_F16,  KC_F17,   KC_F18,   KC_F19,  KC_F20,        \
+  _,       _,       _,       _,          _,       _,        _,        _,       _, QK_BOOT,       \
                     _,       KC_ESC,       _,          _,       _,       _ \
 ),
 /* SYMB
