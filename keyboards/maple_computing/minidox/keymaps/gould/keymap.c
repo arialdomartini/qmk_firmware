@@ -122,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |           |      |  <-  |      |  ->  |  '   |
  * |Super |  Alt | Ctrl |Shift |      |           | Ins  |      | Down |      |  "   |
  * |------+------+------+------+------|           |------+------+------+------+------|
- * |      |      |      |      |      |           |      | PgUp | CAPS |PgDown|  \   |
+ * |      |      |      |      |      |           | WCaps| PgUp | CAPS |PgDown|      |
  * `----------------------------------'           `----------------------------------'
  *                  ,--------------------.    ,------,-------------.
  *                  |      |      |      |    |      |  Tab |      |
@@ -131,10 +131,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_CURS] = LAYOUT_split_3x5_3( \
-  _,       _,       _______, _,       _,            MYDARROW,  KC_HOME,  KC_UP,                 KC_END,    KC_GRV,  \
-  _______, _______, _______, _______, _,            KC_INS,    KC_LEFT,  KC_DOWN,               KC_RIGHT,  KC_QUOTE,  \
-  _,       _,       _,       _,       _,            _,         KC_PGUP,  QK_CAPS_WORD_TOGGLE,  KC_PGDN,   KC_BSLS,  \
-                      _,       _,       _,        KC_ENTER,  KC_TAB,   _                 \
+  _,       _,       _______, _,       _,            MYDARROW,  KC_HOME,  KC_UP,    KC_END,    KC_GRV,  \
+  _______, _______, _______, _______, _,            KC_INS,    KC_LEFT,  KC_DOWN,  KC_RIGHT,  KC_QUOTE,  \
+  _,       _,       _,       _,       _,            CW_TOGG,   KC_PGUP,  KC_CAPS,  KC_PGDN,   KC_BSLS,  \
+                    _,       _,       _,            KC_ENTER,  KC_TAB,   _                 \
 ),
 
 /* NUM
