@@ -195,10 +195,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_SYMB] = LAYOUT_split_3x5_3( \
-  _,       _,       _,   _,       _,              _, KC_UNDS, KC_ASTR,   KC_TILD,  KC_PIPE,   \
-  KC_LT,       KC_LCBR, KC_LBRC, KC_LPRN, _,      _,       KC_RPRN, KC_RBRC, KC_RCBR,  KC_GT,    \
-  _,       _,       _,       _,       _,          _,       MYARROW, MYDARROW,       _,        KC_BSLS,   \
-                    _,       _, _______,          _,       _,       _ \
+  _,       _,        _,        _,        _,          _,   KC_UNDS,   KC_ASTR,   KC_TILD,  KC_PIPE,   \
+  KC_LT,   KC_LCBR,  KC_LBRC,  KC_LPRN,  _,          _,   KC_RPRN,   KC_RBRC,   KC_RCBR,  KC_GT,     \
+  _,       _,        _,        _,        _,          _,   MYARROW,   MYDARROW,  _,        KC_BSLS,   \
+                     _,        _,       _______,          _,         _,         _ \
 ),
 /* FLASH
  *
