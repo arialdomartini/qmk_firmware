@@ -64,9 +64,11 @@
 
 enum custom_keycodes {
     MYARROW = SAFE_RANGE,
+    MYBARROW,
     MYDARROW,
     MYBIND,
-    MYPIPE
+    MYPIPE,
+    MYBPIPE
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -74,6 +76,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case MYARROW:
         if (record->event.pressed) {
           SEND_STRING("->");
+        }
+        break;
+    case MYBARROW:
+        if (record->event.pressed) {
+          SEND_STRING("<-");
         }
         break;
     case MYDARROW:
@@ -89,6 +96,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case MYPIPE:
         if (record->event.pressed) {
           SEND_STRING("|>");
+        }
+        break;
+    case MYBPIPE:
+        if (record->event.pressed) {
+          SEND_STRING("<|");
         }
         break;
   };
@@ -155,7 +167,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------|           |------+------+------+------+------|
  * |  1   |  2   |  3   |  4   |  5   |           |  6   |   7  |   8  |   9  |  0   |
  * |------+------+------+------+------|           |------+------+------+------+------|
- * |      |      |      |      |      |           |      |      |      |      |      |
+ * |  ^   |  &   |      |      |      |           |      |      |     |   .  |  /   |
  * `----------------------------------'           `----------------------------------'
  *                  ,--------------------.    ,------,-------------.
  *                  |      |      |      |    |      |      |      |
@@ -194,11 +206,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* 
  *
  * ,----------------------------------.           ,----------------------------------.
- * |  `   |  ~   |  |   |      |           |  |   |   _  |  *   |  "   |  '   |
+ * |  `   |  ~   |      |      |      |           |   |  |  _   |  *   |  "   |  '   |
  * |------+------+------+------+------|           |------+------+------+------+------|
  * |  <   |  {   |  [   |   (  |      |           |      |  )   |   ]  |  }   |  >   |
  * |------+------+------+------+------|           |------+------+------+------+------|
- * |      |      |      |      |      |           |  |>  |  ->  |  =>  |  >>= |  \   |
+ * |      |      |      |  <-  |  <|  |           |  |>  |  ->  |  =>  |  >>= |  \   |
  * `----------------------------------'           `----------------------------------'
  *                  ,--------------------.    ,------,-------------.
  *                  |      |      |      |    |      |      |      |
@@ -209,7 +221,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_SYMB] = LAYOUT_split_3x5_3( \
   KC_GRV,  KC_TILD,  _,         _,       _,           KC_PIPE,  KC_UNDS,   KC_ASTR,   KC_DQUO,  KC_QUOTE,  \
   KC_LT,   KC_LCBR,  KC_LBRC,  KC_LPRN,  _,           _,        KC_RPRN,   KC_RBRC,   KC_RCBR,  KC_GT,     \
-  _,       _,        _,        _,        _,           MYPIPE,   MYARROW,   MYDARROW,  MYBIND,   KC_BSLS,   \
+  _,       _,        _,        MYBARROW, MYBPIPE,     MYPIPE,   MYARROW,   MYDARROW,  MYBIND,   KC_BSLS,   \
                      _,        _,        _,          _,         _,         _ \
 ),
 /* FLASH
