@@ -130,7 +130,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_CURS] = LAYOUT_split_3x5_3( \
-  _,       _,       _______, _,       _,            MYDARROW,  KC_HOME,  KC_UP,    KC_END,    KC_GRV,  \
+  _,       _,       _______, _,       _,            _,         KC_HOME,  KC_UP,    KC_END,    KC_GRV,  \
   KC_GRV,  _______, _______, _______, _,            KC_INS,    KC_LEFT,  KC_DOWN,  KC_RIGHT,  KC_QUOTE, \
   _,       _,       _,       _,       _,            CW_TOGG,   KC_PGUP,  KC_CAPS,  KC_PGDN,   KC_BSLS,  \
                     _,       _,       _,            KC_ENTER,  KC_TAB,   _                 \
@@ -186,7 +186,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------|           |------+------+------+------+------|
  * |  <   |  {   |  [   |   (  |      |           |      |  )   |   ]  |  }   |   >  |
  * |------+------+------+------+------|           |------+------+------+------+------|
- * |      |      |      |      |      |           |      |      |      |      |  \   |
+ * |      |      |      |      |      |           |      |  ->  |  =>  |      |  \   |
  * `----------------------------------'           `----------------------------------'
  *                  ,--------------------.    ,------,-------------.
  *                  |      |      |      |    |      |      |      |
@@ -195,9 +195,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_SYMB] = LAYOUT_split_3x5_3( \
-  _,       _,       _,   _,       _,          MYARROW, KC_UNDS, KC_ASTR,   KC_TILD,  KC_PIPE,   \
-  KC_LT,       KC_LCBR, KC_LBRC, KC_LPRN, _,          _,       KC_RPRN, KC_RBRC, KC_RCBR,  KC_GT,    \
-  _,       _,       _,       _,       _,          _,       _,       _,       _,        KC_BSLS,   \
+  _,       _,       _,   _,       _,              _, KC_UNDS, KC_ASTR,   KC_TILD,  KC_PIPE,   \
+  KC_LT,       KC_LCBR, KC_LBRC, KC_LPRN, _,      _,       KC_RPRN, KC_RBRC, KC_RCBR,  KC_GT,    \
+  _,       _,       _,       _,       _,          _,       MYARROW, MYDARROW,       _,        KC_BSLS,   \
                     _,       _, _______,          _,       _,       _ \
 ),
 /* FLASH
