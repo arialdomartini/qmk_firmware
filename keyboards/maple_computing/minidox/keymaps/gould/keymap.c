@@ -128,12 +128,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* CURS
  * ,----------------------------------.           ,----------------------------------.
- * |      |      |      |      |      |           | =>   | Home |  Up  | End  |  `   |
+ * |      |      |      |      |      |           | Ins  | Home |  Up  | End  |      |
  * |------+------+------+------+------|           |------+------+------+------+------|
- * |      |      |      |      |      |           |      |  <-  |      |  ->  |  '   |
- * |Super |  Alt | Ctrl |Shift |      |           | Ins  |      | Down |      |  "   |
+ * |      |      |      |      |      |           |      |      |      |      |      |
+ * |Super |  Alt | Ctrl |Shift |      |           | CAPS |  <-  | Down |  ->  | WCaps|
  * |------+------+------+------+------|           |------+------+------+------+------|
- * |      |      |      |      |      |           | WCaps| PgUp | CAPS |PgDown|      |
+ * |      |      |      |      |      |           |      | PgUp |      |PgDown|      |
  * `----------------------------------'           `----------------------------------'
  *                  ,--------------------.    ,------,-------------.
  *                  |      |      |      |    |      |  Tab |      |
@@ -142,10 +142,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_CURS] = LAYOUT_split_3x5_3( \
-  _,       _,       _______, _,       _,            _,         KC_HOME,  KC_UP,    KC_END,    KC_GRV,  \
-  _,        _______, _______, _______, _,            KC_INS,    KC_LEFT,  KC_DOWN,  KC_RIGHT,  KC_QUOTE, \
-  _,       _,       _,       _,       _,            CW_TOGG,   KC_PGUP,  KC_CAPS,  KC_PGDN,   KC_BSLS,  \
-                    _,       _,       _,            KC_ENTER,  KC_TAB,   _                 \
+  _,       _,       _______, _,       _,            KC_INS,    KC_HOME,  KC_UP,    KC_END,    _,        \
+  KC_LGUI, _______, _______, _______, _,           KC_CAPS,   KC_LEFT,  KC_DOWN,  KC_RIGHT,   CW_TOGG,  \
+  _,       _,       _,       _,       _,            _,         KC_PGUP,  _,        KC_PGDN,   _,        \
+                    _,       _,       _,            KC_ENTER,  KC_TAB,   _                              \
 ),
 
 /* NUM
@@ -194,7 +194,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* 
  *
  * ,----------------------------------.           ,----------------------------------.
- * |      |      |      |      |      |           |      |   _  |  *   |  ~   |  |   |
+ * |  `   |  ~   |  |   |      |           |  |   |   _  |  *   |  "   |  '   |
  * |------+------+------+------+------|           |------+------+------+------+------|
  * |  <   |  {   |  [   |   (  |      |           |      |  )   |   ]  |  }   |  >   |
  * |------+------+------+------+------|           |------+------+------+------+------|
@@ -207,7 +207,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_SYMB] = LAYOUT_split_3x5_3( \
-  _,       _,        _,        _,        _,          _,        KC_UNDS,   KC_ASTR,   KC_TILD,  KC_PIPE,   \
+  KC_GRV,  KC_TILD,  _,         _,        _,          KC_PIPE,  KC_UNDS,   KC_ASTR,   KC_DQUO,  KC_QUOTE,  \
   KC_LT,   KC_LCBR,  KC_LBRC,  KC_LPRN,  _,          _,        KC_RPRN,   KC_RBRC,   KC_RCBR,  KC_GT,     \
   _,       _,        _,        _,        _,          MYPIPE,   MYARROW,   MYDARROW,  MYBIND,   KC_BSLS,   \
                      _,        _,       _______,          _,         _,         _ \
