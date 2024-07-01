@@ -136,16 +136,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |           |      | PgUp |      |PgDown|      |
  * `----------------------------------'           `----------------------------------'
  *                  ,--------------------.    ,------,-------------.
- *                  |      |      |      |    |      |  Tab |      |
- *                  `-------------|      |    |Return|------+------.
+ *                  |      |      |      |    |      |      |      |
+ *                  `-------------|      |    | Tab  |------+------.
  *                                |      |    |      |
  *                                `------'    `------'
  */
-[_CURS] = LAYOUT_split_3x5_3( \
+[_CURS] = LAYOUT_split_3x5_3(                                           \
   _,       _,       _______, _,       _,            KC_INS,    KC_HOME,  KC_UP,    KC_END,    _,        \
-  KC_LGUI, _______, _______, _______, _,           KC_CAPS,   KC_LEFT,  KC_DOWN,  KC_RIGHT,   CW_TOGG,  \
+  KC_LGUI, _______, _______, _______, _,            KC_CAPS,   KC_LEFT,  KC_DOWN,  KC_RIGHT,   CW_TOGG, \
   _,       _,       _,       _,       _,            _,         KC_PGUP,  _,        KC_PGDN,   _,        \
-                    _,       _,       _,            KC_ENTER,  KC_TAB,   _                              \
+                    _,       _,       _,            KC_TAB,    _,        _                              \
 ),
 
 /* NUM
@@ -159,7 +159,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `----------------------------------'           `----------------------------------'
  *                  ,--------------------.    ,------,-------------.
  *                  |      |      |      |    |      |      |      |
- *                  `-------------|      |    |      |------+------.
+ *                  `-------------|CoTab |    |      |------+------.
  *                                |      |    |      |
  *                                `------'    `------'
  */
@@ -167,7 +167,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,    _,       KC_MINS,   KC_EQL,  KC_PPLS,  KC_ASTR,      \
   MY_1,    MY_2,    MY_3,    MY_4,    KC_5,       KC_6,    MY_7,      MY_8,     MY_9,     MY_0,   \
   KC_CIRC, KC_AMPR, _,       _,          _,       _,       _      ,   KC_COMM,  KC_DOT,   KC_SLSH,      \
-                    _,       _______, _,          _,       _,         _ \
+                    _,       _______,   S(KC_TAB),          _,       _,         _ \
 ),
 /* FUNL
  *
@@ -179,8 +179,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |           |      |      |      |      |      |
  * `----------------------------------'           `----------------------------------'
  *                  ,--------------------.    ,------,-------------.
- *                  |      |      |      |    |      |      |      |
- *                  `-------------| Esc  |    |      |------+------.
+ *                  |      | Esc  |      |    |      |      |      |
+ *                  `-------------|      |    |      |------+------.
  *                                |      |    |      |
  *                                `------'    `------'
  */
@@ -188,7 +188,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,    KC_F16,  KC_F17,   KC_F18,   KC_F19,  KC_F20,   \
   MY_F1,   MY_F2,   MY_F3,   MY_F4,   KC_F5,     KC_F6,   MY_F7,    MY_F8,    MY_F9,   MY_F10,   \
   _,       _,       _,       _,          _,       _,        _,        _,       _,   _,       \
-                    _,       KC_ESC,       _,          _,       _,       _ \
+                    _,       KC_ESC,     _,       _,       _,       _ \
 ),
 
 /* 
@@ -207,10 +207,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_SYMB] = LAYOUT_split_3x5_3( \
-  KC_GRV,  KC_TILD,  _,         _,        _,          KC_PIPE,  KC_UNDS,   KC_ASTR,   KC_DQUO,  KC_QUOTE,  \
-  KC_LT,   KC_LCBR,  KC_LBRC,  KC_LPRN,  _,          _,        KC_RPRN,   KC_RBRC,   KC_RCBR,  KC_GT,     \
-  _,       _,        _,        _,        _,          MYPIPE,   MYARROW,   MYDARROW,  MYBIND,   KC_BSLS,   \
-                     _,        _,       _______,          _,         _,         _ \
+  KC_GRV,  KC_TILD,  _,         _,       _,           KC_PIPE,  KC_UNDS,   KC_ASTR,   KC_DQUO,  KC_QUOTE,  \
+  KC_LT,   KC_LCBR,  KC_LBRC,  KC_LPRN,  _,           _,        KC_RPRN,   KC_RBRC,   KC_RCBR,  KC_GT,     \
+  _,       _,        _,        _,        _,           MYPIPE,   MYARROW,   MYDARROW,  MYBIND,   KC_BSLS,   \
+                     _,        _,        _,          _,         _,         _ \
 ),
 /* FLASH
  *
