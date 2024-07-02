@@ -140,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* CURS
  * ,----------------------------------.           ,----------------------------------.
- * |      |      |      |      |      |           | Ins  | Home |  Up  | End  |      |
+ * |  `   |      |      |      |      |           | Ins  | Home |  Up  | End  |  '   |
  * |------+------+------+------+------|           |------+------+------+------+------|
  * |      |      |      |      |      |           |      |      |      |      |      |
  * |Super |  Alt | Ctrl |Shift |      |           | CAPS |  <-  | Down |  ->  | WCaps|
@@ -154,7 +154,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_CURS] = LAYOUT_split_3x5_3(                                           \
-  _,       _,       _______, _,       _,            KC_INS,    KC_HOME,  KC_UP,    KC_END,    _,        \
+  KC_GRV,  _,       _______, _,       _,            KC_INS,    KC_HOME,  KC_UP,    KC_END,    KC_QUOTE, \
   KC_LGUI, _______, _______, _______, _,            KC_CAPS,   KC_LEFT,  KC_DOWN,  KC_RIGHT,   CW_TOGG, \
   _,       _,       _,       _,       _,            _,         KC_PGUP,  _,        KC_PGDN,   _,        \
                     _,       _,       _,            KC_TAB,    _,        _                              \
