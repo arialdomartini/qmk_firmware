@@ -206,7 +206,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* 
  *
  * ,----------------------------------.           ,----------------------------------.
- * |      |  ~   |      |      |      |           |   |  |  _   |  *   |      |  "   |
+ * |      |      |      |      |      |           |   |  |  _   |  *   |  ~   |  "   |
  * |------+------+------+------+------|           |------+------+------+------+------|
  * |  <   |  {   |  [   |   (  |      |           |      |  )   |   ]  |  }   |  >   |
  * |------+------+------+------+------|           |------+------+------+------+------|
@@ -219,7 +219,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_SYMB] = LAYOUT_split_3x5_3( \
-      _,       KC_TILD,  _,         _,       _,           KC_PIPE,  KC_UNDS,   KC_ASTR,   _, KC_DQUO,      \
+      _,   _,        _,        _,        _,           KC_PIPE,  KC_UNDS,   KC_ASTR,   KC_TILD,  KC_DQUO,   \
   KC_LT,   KC_LCBR,  KC_LBRC,  KC_LPRN,  _,           _,        KC_RPRN,   KC_RBRC,   KC_RCBR,  KC_GT,     \
   _,       _,        _,        MYBARROW, MYBPIPE,     MYPIPE,   MYARROW,   MYDARROW,  MYBIND,   _,         \
                      _,        _,        _,          _,         _,         _ \
