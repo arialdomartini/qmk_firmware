@@ -145,7 +145,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |           |      |      |      |      |      |
  * |Super |  Alt | Ctrl |Shift |      |           | CAPS |  <-  | Down |  ->  | WCaps|
  * |------+------+------+------+------|           |------+------+------+------+------|
- * |      |      |      |      |      |           |      | PgUp |      |PgDown|  \   |
+ * |      |      |      |      |      |           |      | PgUp | Mouse|PgDown|  \   |
  * `----------------------------------'           `----------------------------------'
  *                  ,--------------------.    ,------,-------------.
  *                  |      |      |      |    |      |      |      |
@@ -154,9 +154,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                `------'    `------'
  */
 [_CURS] = LAYOUT_split_3x5_3(                                           \
-  KC_GRV,  _,       _______, _,       _,            KC_INS,    KC_HOME,  KC_UP,    KC_END,    KC_QUOTE, \
-  KC_LGUI, _______, _______, _______, _,            KC_CAPS,   KC_LEFT,  KC_DOWN,  KC_RIGHT,  CW_TOGG,  \
-  _,       _,       _,       _,       _,            _,         KC_PGUP,  _,        KC_PGDN,   KC_BSLS,  \
+  KC_GRV,  _,       _______, _,       _,            KC_INS,    KC_HOME,  KC_UP,       KC_END,    KC_QUOTE, \
+  KC_LGUI, _______, _______, _______, _,            KC_CAPS,   KC_LEFT,  KC_DOWN,     KC_RIGHT,  CW_TOGG,  \
+  _,       _,       _,       _,       _,            _,         KC_PGUP,  KC_MS_BTN2,  KC_PGDN,   KC_BSLS, \
                     _,       _,       _,            KC_TAB,    _,        _                              \
 ),
 
